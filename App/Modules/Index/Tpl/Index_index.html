@@ -15,31 +15,19 @@
 		<span id='send'></span>
 	</div>
 	<div id='main'>
-		<dl class='paper a1'>
+	<foreach name='wish' item='v'>
+		<dl class='paper a{:mt_rand(1,5)}'>
 			<dt>
-				<span class='username'>后盾网</span>
-				<span class='num'>No.00001</span>
+				<span class='username'>{$v.username}</span>
+				<span class='num'>No.{$v.id}</span>
 			</dt>
-			<dd class='content'>大</dd>
+			<dd class='content'>{$v.content|replace_phiz=###}</dd>
 			<dd class='bottom'>
-				<span class='time'>今天08:30</span>
+				<span class='time'>{$v.time|date='y-m-d',###}</span>
 				<a href="" class='close'></a>
 			</dd>
 		</dl>
-		<dl class='paper a2'>
-			<dt>
-				<span class='username'>后盾网</span>
-				<span class='num'>No.00001</span>
-			</dt>
-			<dd class='content'>大家</dd>
-			<dd class='bottom'>
-				<span class='time'>今天08:30</span>
-				<a href="" class='close'></a>
-			</dd>
-		</dl>
-		
-		
-		
+		</foreach>
 	</div>
 
 	<div id='send-form'>

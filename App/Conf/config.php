@@ -5,6 +5,10 @@ return array(
 	'APP_GROUP_LIST' => 'Index,Admin',
     //默认分组
     'DEFAULT_GROUP' => 'Index',
+    'APP_GROUP_MODE' => 1,
+    'APP_GROUP_PATH' => 'Modules',
+    
+    
     
     //配置数据库
     'DB_HOST' => '127.0.0.1',
@@ -18,5 +22,9 @@ return array(
     
     //模板路径  控制器_方法名.html
     'TMPL_FILE_DEPR' => '_',
+    
+    //自定义SESSION数据库存储
+    'SESSION_TYPE' => 'Db',
+       
 );
 ?>

@@ -3,7 +3,9 @@
 class IndexAction extends Action {
     //首页视图
      public function index(){
-	 $this->display();
+         $wish = M('wish')->select();
+         $this->assign('wish',$wish)->display();
+	 
     }
     
     /**

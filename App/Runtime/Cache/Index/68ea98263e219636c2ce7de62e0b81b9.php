@@ -6,67 +6,26 @@
 	<link rel="stylesheet" href="__PUBLIC__/Css/index.css" />
 	<script type="text/javascript" src='__PUBLIC__/Js/jquery-1.7.2.min.js'></script>
 	<script type="text/javascript" src='__PUBLIC__/Js/index.js'></script>
+	<script type="text/javascript">
+	      var handleUrl = '<?php echo U("Index/Index/handle",'','');?>';
+	</script>
 </head>
 <body>
 	<div id='top'>
 		<span id='send'></span>
 	</div>
 	<div id='main'>
-		<dl class='paper a1'>
+	<?php if(is_array($wish)): foreach($wish as $key=>$v): ?><dl class='paper a<?php echo mt_rand(1,5);?>'>
 			<dt>
-				<span class='username'>后盾网</span>
-				<span class='num'>No.00001</span>
+				<span class='username'><?php echo ($v["username"]); ?></span>
+				<span class='num'>No.<?php echo ($v["id"]); ?></span>
 			</dt>
-			<dd class='content'>大家今天要好好把后台布局完成大家今天要好好把后台布局完成大家今天要好好把后台布局完成</dd>
+			<dd class='content'><?php echo (replace_phiz($v["content"])); ?></dd>
 			<dd class='bottom'>
-				<span class='time'>今天08:30</span>
+				<span class='time'><?php echo (date('y-m-d',$v["time"])); ?></span>
 				<a href="" class='close'></a>
 			</dd>
-		</dl>
-		<dl class='paper a2'>
-			<dt>
-				<span class='username'>后盾网</span>
-				<span class='num'>No.00001</span>
-			</dt>
-			<dd class='content'>大家今天要好好把后台布局完成大家今天要好好把后台布局完成大家今天要好好把后台布局完成</dd>
-			<dd class='bottom'>
-				<span class='time'>今天08:30</span>
-				<a href="" class='close'></a>
-			</dd>
-		</dl>
-		<dl class='paper a3'>
-			<dt>
-				<span class='username'>后盾网</span>
-				<span class='num'>No.00001</span>
-			</dt>
-			<dd class='content'>大家今天要好好把后台布局完成大家今天要好好把后台布局完成大家今天要好好把后台布局完成</dd>
-			<dd class='bottom'>
-				<span class='time'>今天08:30</span>
-				<a href="" class='close'></a>
-			</dd>
-		</dl>
-		<dl class='paper a4'>
-			<dt>
-				<span class='username'>后盾网</span>
-				<span class='num'>No.00001</span>
-			</dt>
-			<dd class='content'>大家今天要好好把后台布局完成大家今天要好好把后台布局完成大家今天要好好把后台布局完成</dd>
-			<dd class='bottom'>
-				<span class='time'>今天08:30</span>
-				<a href="" class='close'></a>
-			</dd>
-		</dl>
-		<dl class='paper a5'>
-			<dt>
-				<span class='username'>后盾网</span>
-				<span class='num'>No.00001</span>
-			</dt>
-			<dd class='content'>大家今天要好好把后台布局完成大家今天要好好把后台布局完成大家今天要好好把后台布局完成</dd>
-			<dd class='bottom'>
-				<span class='time'>今天08:30</span>
-				<a href="" class='close'></a>
-			</dd>
-		</dl>
+		</dl><?php endforeach; endif; ?>
 	</div>
 
 	<div id='send-form'>
